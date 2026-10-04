@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 0624a585c97b74f45b5d5ce37ca4ee16
+guid: ac797677eb52ba746873f115c919c504
 AssetOrigin:
   serializedVersion: 1
   productId: 271239
   packageName: 'Unity Learn | 2D Adventure Game: Robot Repair'
   packageVersion: 2.0.0
-  assetPath: Assets/_2DAdventureGame/Art/SugarLand/Environment/Decoration_19.png
+  assetPath: Assets/_2DAdventureGame/Art/Ducko/Environmnent/FloorBricksToGrassSquare.png
   uploadId: 832758
 TextureImporter:
   internalIDToNameTable: []
@@ -55,7 +55,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Decoration_19_0
+      name: FloorBricksToGrassSquare_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 279
-        width: 128
-        height: 139
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,42 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64ff92662f06005439b827bf3f0b5572
-      internalID: -1552367328
+      spriteID: 11692159436927b44abe69e9aab3e5ac
+      internalID: 126164375
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decoration_19_1
+      name: FloorBricksToGrassSquare_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b314c200abaf8dd4eba86f61a40e3a06
+      internalID: 1221926649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FloorBricksToGrassSquare_2
       rect:
         serializedVersion: 2
         x: 128
-        y: 279
-        width: 128
-        height: 139
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,42 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 263f285cbb7316b4690af1f50e690dc6
-      internalID: -1067985665
+      spriteID: 5546c0bb4dce5b648ae941e4bf141c70
+      internalID: -1314628818
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decoration_19_2
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 279
-        width: 128
-        height: 139
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 86f56888251f1bd4aa875ddcf3c08ed0
-      internalID: 1087656359
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Decoration_19_3
+      name: FloorBricksToGrassSquare_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 140
-        width: 128
-        height: 139
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,20 +198,42 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eaacfe07aaf93cf44a857fd985271fdb
-      internalID: -1547518576
+      spriteID: 8544de6dbf2b7e34aadb6db55923766e
+      internalID: -1752558532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decoration_19_4
+      name: FloorBricksToGrassSquare_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1ceff33191cf5f45839f4c79528e9cc
+      internalID: 730646286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FloorBricksToGrassSquare_5
       rect:
         serializedVersion: 2
         x: 128
-        y: 140
-        width: 128
-        height: 139
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,42 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b8cd655bb5a0dc4e9e277f8ea74f8b9
-      internalID: 1585267369
+      spriteID: 787984985783f1c4f8117f75cbd165d2
+      internalID: 1875799865
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decoration_19_5
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 140
-        width: 128
-        height: 139
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d95fde1155d93bf419494238b9171f02
-      internalID: -1953852206
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Decoration_19_6
+      name: FloorBricksToGrassSquare_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
-        width: 128
-        height: 139
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,20 +264,42 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 298d22a3922b69d408c4e760dbbcc115
-      internalID: 725511430
+      spriteID: 283c29962df214d49b98c9ed58236655
+      internalID: 1213406168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Decoration_19_7
+      name: FloorBricksToGrassSquare_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f136385298c0fab45a2dfdf629b3d559
+      internalID: 1600737305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FloorBricksToGrassSquare_8
       rect:
         serializedVersion: 2
         x: 128
-        y: 1
-        width: 128
-        height: 139
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,30 +308,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc985b59048e32e478da1de7145f98c6
-      internalID: -269545426
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Decoration_19_8
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 1
-        width: 128
-        height: 139
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 662ca03759988c74e987f9ae1e5d515e
-      internalID: -657600116
+      spriteID: 87d4bf192bb0af8488923381ed79261d
+      internalID: 754497788
       vertices: []
       indices: 
       edges: []
@@ -328,17 +328,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":128.0,"y":139.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Decoration_19_0: -1552367328
-      Decoration_19_1: -1067985665
-      Decoration_19_2: 1087656359
-      Decoration_19_3: -1547518576
-      Decoration_19_4: 1585267369
-      Decoration_19_5: -1953852206
-      Decoration_19_6: 725511430
-      Decoration_19_7: -269545426
-      Decoration_19_8: -657600116
+      FloorBricksToGrassSquare_0: 126164375
+      FloorBricksToGrassSquare_1: 1221926649
+      FloorBricksToGrassSquare_2: -1314628818
+      FloorBricksToGrassSquare_3: -1752558532
+      FloorBricksToGrassSquare_4: 730646286
+      FloorBricksToGrassSquare_5: 1875799865
+      FloorBricksToGrassSquare_6: 1213406168
+      FloorBricksToGrassSquare_7: 1600737305
+      FloorBricksToGrassSquare_8: 754497788
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
