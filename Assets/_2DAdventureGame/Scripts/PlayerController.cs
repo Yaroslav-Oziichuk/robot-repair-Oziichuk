@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Look Y", moveDirection.y);
         animator.SetFloat("Speed", move.magnitude);
         move = MoveAction.ReadValue<Vector2>();
+        
         if (isInvincible)
         {
             damageCooldown -= Time.deltaTime;
