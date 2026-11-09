@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public float timeInvincible = 2.0f;
     bool isInvincible;
     float damageCooldown;
+    public InputAction TalkAction;
+    private NonPlayerCharacter lastNonPlayerCharacter;
     void Start()
     {
         MoveAction.Enable();
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
         LaunchAction.Enable();
+        TalkAction.Enable();
     }
     void Update()
     {
@@ -35,7 +38,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Look Y", moveDirection.y);
         animator.SetFloat("Speed", move.magnitude);
         move = MoveAction.ReadValue<Vector2>();
-        
+
         if (isInvincible)
         {
             damageCooldown -= Time.deltaTime;
@@ -47,6 +50,25 @@ public class PlayerController : MonoBehaviour
         if (LaunchAction.WasPressedThisFrame())
         {
             Launch();
+        }
+        RaycastHit2D hit = Physics2D.Raycast(
+            rigidbody2d.position + Vector2.up * 0.2f,
+            moveDirection, 1.5f, LayerMask.GetMask("NPC"));
+        if (hit.collider != null)
+        {
+            NonPlayerCharacter npc =
+            hit.collider.GetComponent<NonPlayerCharacter>();
+            npc.dialogueBubble.SetActive(true);
+            lastNonPlayerCharacter = npc;
+            FindFriend();
+        }
+        else
+        {
+            if (lastNonPlayerCharacter != null)
+            {
+                lastNonPlayerCharacter.dialogueBubble.SetActive(false);
+                lastNonPlayerCharacter = null;
+            }
         }
     }
     void FixedUpdate()
@@ -81,5 +103,12 @@ public class PlayerController : MonoBehaviour
         projectileObject.GetComponent<Projectile>();
         projectile.Launch(moveDirection, 300);
         animator.SetTrigger("Launch");
+    }
+    void FindFriend()
+    {
+        if (TalkAction.WasPressedThisFrame())
+        {
+            UIHandler.instance.DisplayDialogue();
+        }
     }
 }

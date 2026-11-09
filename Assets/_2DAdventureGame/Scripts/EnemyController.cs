@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     Rigidbody2D rigidbody2d;
     float timer;
     int direction = 1;
+    public bool isBroken { get { return broken; } }
 
     void Start()
     {

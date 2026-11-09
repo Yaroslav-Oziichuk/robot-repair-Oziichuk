@@ -219,6 +219,24 @@ MonoBehaviour:
   speed: 3
   maxHealth: 5
   timeInvincible: 2
+  TalkAction:
+    m_Name: Talk
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 0a7cf8c3-cc95-4a50-8c60-42c78b0d24b3
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 9a1e5b6e-440e-450a-b5d3-5c7f4dec9410
+      m_Path: <Keyboard>/x
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Talk
+      m_Flags: 0
+    m_Flags: 0
+    m_Priority: 0
 --- !u!50 &7472660071842471774
 Rigidbody2D:
   serializedVersion: 5
