@@ -2,6 +2,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     Rigidbody2D rigidbody2d;
+    public AudioClip shootSound;
     void Awake()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
@@ -23,6 +24,7 @@ public class Projectile : MonoBehaviour
         other.GetComponent<EnemyController>();
         if (enemy != null)
         {
+            AudioSource.PlayClipAtPoint(shootSound, transform.position);
             enemy.Fix();
             Destroy(gameObject);
         }

@@ -13,11 +13,22 @@ public class EnemyController : MonoBehaviour
     int direction = 1;
     public bool isBroken { get { return broken; } }
 
+    // ЗВУКОВІ ЗМІННІ
+    [Header("Enemy Audio")]
+    public AudioClip fixSound;    // Звук, коли ворога лагодять
+    public AudioClip stepSound;   // Звук кроків ворога
+    private AudioSource audioSource;
+    private float stepTimer;
+    public float stepInterval = 0.5f; // Інтервал між кроками ворога
+
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         timer = changeTime;
         animator = GetComponent<Animator>();
+        
+        // Отримуємо компонент AudioSource з об'єкта ворога
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -36,6 +47,18 @@ public class EnemyController : MonoBehaviour
         {
             return;
         }
+
+        // Таймер для кроків ворога, поки він рухається
+        stepTimer -= Time.fixedDeltaTime;
+        if (stepTimer <= 0f)
+        {
+            if (stepSound != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(stepSound);
+            }
+            stepTimer = stepInterval;
+        }
+
         Vector2 position = rigidbody2d.position;
 
         if (vertical)
@@ -53,6 +76,7 @@ public class EnemyController : MonoBehaviour
 
         rigidbody2d.MovePosition(position);
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         PlayerController player = other.gameObject.GetComponent<PlayerController>();
@@ -61,11 +85,18 @@ public class EnemyController : MonoBehaviour
             player.ChangeHealth(-1);
         }
     }
+
     public void Fix()
     {
         broken = false;
         rigidbody2d.simulated = false;
         animator.SetTrigger("Fixed");
+
+        // Відтворюємо звук лагодження, коли ворога вилікували
+        if (fixSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(fixSound);
+        }
     }
 }
 

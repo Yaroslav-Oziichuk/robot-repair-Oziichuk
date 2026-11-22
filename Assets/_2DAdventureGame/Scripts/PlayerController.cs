@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 public class PlayerController : MonoBehaviour
 {
     Animator animator;
@@ -18,6 +19,17 @@ public class PlayerController : MonoBehaviour
     float damageCooldown;
     public InputAction TalkAction;
     private NonPlayerCharacter lastNonPlayerCharacter;
+
+    [Header("Audio Clips")]
+    public AudioClip hitSound;      
+    public AudioClip collectSound;  
+    public AudioClip shootSound;    
+    public AudioClip footstepSound; // Звук кроків
+    private AudioSource audioSource;
+
+    private float footstepTimer;
+    public float footstepInterval = 0.4f;
+
     void Start()
     {
         MoveAction.Enable();
@@ -26,7 +38,10 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         LaunchAction.Enable();
         TalkAction.Enable();
+
+        audioSource = GetComponent<AudioSource>();
     }
+
     void Update()
     {
         if (!Mathf.Approximately(move.x, 0.0f) || !Mathf.Approximately(move.y, 0.0f))
@@ -39,6 +54,24 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed", move.magnitude);
         move = MoveAction.ReadValue<Vector2>();
 
+        // Логіка кроків
+        if (move.magnitude > 0.1f) 
+        {
+            footstepTimer -= Time.deltaTime;
+            
+            if (footstepTimer <= 0f)
+            {
+                if (footstepSound != null && audioSource != null)
+                {
+                    audioSource.PlayOneShot(footstepSound);
+                }
+                footstepTimer = footstepInterval; 
+            }
+        }
+        else
+        {
+            footstepTimer = 0f; 
+        }
         if (isInvincible)
         {
             damageCooldown -= Time.deltaTime;
@@ -71,12 +104,14 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
     void FixedUpdate()
     {
         Vector2 position = (Vector2)rigidbody2d.position
         + move * speed * Time.deltaTime;
         rigidbody2d.MovePosition(position);
     }
+
     public void ChangeHealth(int amount)
     {
         if (amount < 0)
@@ -89,11 +124,25 @@ public class PlayerController : MonoBehaviour
             isInvincible = true;
             damageCooldown = timeInvincible;
             animator.SetTrigger("Hit");
+
+            if (hitSound != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(hitSound);
+            }
         }
+        else
+        {
+            if (collectSound != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(collectSound);
+            }
+        }
+
         currentHealth = Mathf.Clamp(currentHealth + amount,
         0, maxHealth);
         UIHandler.instance.SetHealthValue(currentHealth / (float)maxHealth);
     }
+
     void Launch()
     {
         GameObject projectileObject = Instantiate(projectilePrefab,
@@ -103,7 +152,13 @@ public class PlayerController : MonoBehaviour
         projectileObject.GetComponent<Projectile>();
         projectile.Launch(moveDirection, 300);
         animator.SetTrigger("Launch");
+
+        if (shootSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(shootSound);
+        }
     }
+
     void FindFriend()
     {
         if (TalkAction.WasPressedThisFrame())
